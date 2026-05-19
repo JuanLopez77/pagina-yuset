@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula T – Recuperación y Lealtad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/logo.jpeg') }}" type="image/jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="hero fade-in">
+        <div class="hero-content">
+            <h1>Recuperación del Servicio<br><span>y Lealtad</span></h1>
+            <p>Salva situaciones críticas y convierte errores en oportunidades.</p>
+        </div>
+    </header>
+
+    <section class="nu-section-container slide-up">
+        <div class="nu-box box-soft-purple">
+            <div class="nu-box-content">
+                <span class="nu-label">Reto</span>
+                <h4>El Escenario</h4>
+                <p>Un cliente corporativo importante tuvo una mala experiencia en el restaurante y amenaza con cancelar todos sus eventos futuros con la empresa. 
+                <strong>Diseña y ejecuta un plan de recuperación de 24 horas para fidelizarlo.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-soft-gray">
+        <section class="nu-section-container slide-up">
+            <div class="section-header-modern">
+                <span class="nu-label">Microlearning</span>
+                <h2>Píldoras de Aprendizaje</h2>
+            </div>
+            <div class="nu-grid">
+                <div class="nu-card">
+                    <div style="color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-video fa-2x"></i><span class="tag tag-blue">Videos</span></div>
+                    <h3>Pildora 1: Límites de Compensación</h3>
+                    <video src="{{ url_for('static', filename='img/curso3.mp4') }}" 
+                        controls 
+                        style="max-height: 250px; width: 100%; border-radius: 12px; object-fit: cover;">
+                    </video>
+                </div>
+                <div class="nu-card">
+                    <div style="color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-microphone fa-2x"></i><span class="tag tag-blue">Audio</span></div>
+                    <h3>Pildora 2: Seguimiento Post-Crisis</h3>
+                    <p>Qué ofrecer sin afectar el margen de utilidad.</p>
+                    <div class="audio-container">
+                        <audio controls>
+                            <source src="{{ url_for('static', filename='img/Juan.mp3') }}" type="audio/mpeg">
+                        </audio>
+                    </div>
+            </div>
+        </section>
+    </div>
+    
+    <div class="bg-soft-gray">
+    <section class="nu-section-container slide-up">
+        <div class="nu-box box-soft-purple">
+                <div class="nu-box-content">
+                    <span class="nu-label">Valor para la empresa</span>
+                <p>Reduce la rotación de clientes y mejora la reputación online (TripAdvisor/Google Reviews).</p>
+            </div>
+    </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="{{ url_for('index') }}" class="nu-btn-secondary" style="text-decoration: none;">Volver al Inicio</a>
+        </div>
+    </section>
+    <footer class="footer-institucional">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h2 class="footer-project-title">Formula-T</h2>
+                <p>Transformando el futuro del turismo en Cartagena.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Equipo</h4>
+                <ul>
+                    <li>Yuseth</li>
+                    <li>Mariana</li>
+                    <li>Juan</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contacto</h4>
+                <ul>
+                    <li>Email: contacto@formula-t.com</li>
+                    <li>Cartagena, Colombia</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Proyecto de Aula - Formula-T. Todos los derechos reservados.
+        </div>
+    </footer>
+</body>
+</html>
