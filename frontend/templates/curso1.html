@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula FS – Front Office Survival</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/logo.jpeg') }}" type="image/jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="hero fade-in">
+        <div class="hero-content">
+            <h1>Formula FS <br><span>Front Office Survival</span></h1>
+            <p>Maneja la presión real de una recepción y rompe el miedo.</p>
+        </div>
+    </header>
+
+    <section class="nu-section-container slide-up">
+        <div class="nu-box box-soft-purple">
+                <div class="nu-box-content">
+                    <span class="nu-label">Reto</span>
+                    <h4>Definición</h4>
+                    <p>Sábado, 4PM, estamos en temporada alta y el calor se siente en el lobby a pesar del aire acondicionado. 
+                        Tienes una fila de 10 personas esperando para realizar el Check-in pero el wifi se acaba de caer y, por consecuencia, el sistema de reservas. Justo en ese momento, entra un huésped vip que exige su habitación inmediatamente porque debe arreglarse ya que tiene una boda en 1 hora y media.
+                        <strong>¿Qué harías primero en esta situación para asegurarte que nadie quede insatisfecho?</strong></p>
+                </div>
+            </div>
+    </section>
+
+    <div class="bg-soft-gray">
+        <section class="nu-section-container slide-up">
+            <div class="section-header-modern">
+                <span class="nu-label">Microlearning</span>
+                <h2>Píldoras de Aprendizaje</h2>
+            </div>
+            <div class="nu-grid">
+                <div class="nu-card">
+                    <div style="color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-video fa-2x"></i><span class="tag tag-blue">Videos</span></div>
+                    <h3>Píldora 1: Calma</h3>
+                    <video src="{{ url_for('static', filename='img/curso1.mp4') }}" 
+                        controls 
+                        style="max-height: 250px; width: 100%; border-radius: 12px; object-fit: cover;">
+                    </video>
+                </div>
+                <div class="nu-card">
+                    <div style="color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-microphone fa-2x"></i><span class="tag tag-blue">Audio</span></div>
+                    <h3>Pildora 2: Frases</h3>
+                    <p>Frases de poder y empowerment para calmar al huésped VIP.</p>
+                    <div class="audio-container">
+                        <audio controls>
+                            <source src="{{ url_for('static', filename='img/mariana.mp3') }}" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+                <div class="nu-card">
+                    <div style="color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-file-alt fa-2x"></i><span class="tag tag-blue">Infografia</span></div>
+                    <h3>Pildora 3: Manual</h3>
+                    <p>Datos críticos para un Check-in manual efectivo durante la caída del sistema.</p>
+                    <img src="{{ url_for('static', filename='img/info1.png') }}" 
+                        onclick="abrirModal(this.src)"
+                        style="max-height: 250px; width: 100%; border-radius: 12px; object-fit: cover; cursor: pointer; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.02)'"
+                        onmouseout="this.style.transform='scale(1)'">
+                </div>
+
+                <div id="miModalImage" class="modal-img-container" onclick="cerrarModal()">
+                    <span class="modal-img-cerrar">&times;</span>
+                    <img class="modal-img-contenido" id="imgAmpliada">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="nu-section-container slide-up">
+        <div class="section-header-modern">
+            <span class="nu-label">Simulación</span>
+            <h2>Decisiones en Cascada</h2>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
+            <div class="nu-card">
+                <p><strong>1. ¿A quién decides atender primero?</strong></p>
+                <div style="margin-top: 15px; display: grid; gap: 10px;">
+                    <label class="quiz-option"><input type="radio" name="q1" value="A"> A) Al que está más molesto</label>
+                    <label class="quiz-option"><input type="radio" name="q1" value="B"> B) Al huésped VIP</label>
+                    <label class="quiz-option"><input type="radio" name="q1" value="C"> C) Al orden de la fila</label>
+                </div>
+            </div>
+
+            <div class="nu-card">
+                <p><strong>2. ¿Qué le ofreces a la fila de 10 personas?</strong></p>
+                <div style="margin-top: 15px; display: grid; gap: 10px;">
+                    <label class="quiz-option"><input type="radio" name="q2" value="A"> A) Nada, que esperen</label>
+                    <label class="quiz-option"><input type="radio" name="q2" value="B"> B) 10% Descuento en Bar</label>
+                    <label class="quiz-option"><input type="radio" name="q2" value="C"> C) Agua y explicación honesta</label>
+                </div>
+            </div>
+
+            <div class="nu-card">
+                <p><strong>3. Mientras atiendes al huésped VIP, uno de los chicos de la fila se acerca y te interrumpe mostrándose con signos de molestia, 
+                    pidiendo ser atendido ya que lleva mas tiempo esperando y amenazando con poner una queja en la página web, 
+                    ¿Cómo reaccionas a continuación para evitar que la molestia se propague a los demás?</strong></p>
+                <div style="margin-top: 15px; display: grid; gap: 10px;">
+                    <label class="quiz-option"><input type="radio" name="q3" value="A"> A) "Espere su turno, caballero"</label>
+                    <label class="quiz-option"><input type="radio" name="q3" value="B"> B) Ignorar el comentario</label>
+                    <label class="quiz-option"><input type="radio" name="q3" value="C"> C) Validar sentimiento y prometer atención</label>
+                </div>
+            </div>
+
+            <div class="quiz-actions" style="text-align: center; margin-top: 30px;">
+                <button type="button" class="nu-btn nu-btn-primary" onclick="verificarRespuestas()">Enviar respuestas</button>
+            </div>
+
+<div id="quiz-result-message" style="margin-top: 30px; width: 100%;"></div>
+        </div>
+    </section>
+
+    <div class="bg-soft-gray">
+        <section class="nu-section-container slide-up">
+            <div class="nu-box box-soft-purple">
+                    <div class="nu-box-content">
+                        <span class="nu-label">¿Sabías que?</span>
+                        <h4>La técnica "Validar y Prometer"</h4>
+                        <p>Es la herramienta más poderosa en turismo para desescalar conflictos. 
+                            Reconocer el sentimiento ("Entiendo su molestia") antes de dar la solución reduce la agresividad del cliente de inmediato.</p>
+                    </div>
+                </div>
+                    <div style="text-align: center; margin-top: 40px;">
+                        <a href="{{ url_for('index') }}" class="nu-btn-secondary" style="text-decoration: none;">Volver al Inicio</a>
+        </section>
+
+    <footer class="footer-institucional">
+        <div class="footer-bottom">&copy; 2026 Formula-T | Proyecto de Aula</div>
+    </footer>
+
+    <script>
+        function verificarRespuestas(event) {
+            // Evita que la página se recargue y se vaya arriba
+            if (event) event.preventDefault();
+            const respuestasCorrectas = {
+                q1: 'B', // Huésped VIP
+                q2: 'C', // Agua y explicación honesta
+                q3: 'C'  // Validar sentimiento y prometer atención
+            };
+
+            let correctas = 0;
+            const totalPreguntas = 3;
+
+            // 2. Recorremos cada pregunta para evaluar la selección del usuario
+            for (let i = 1; i <= totalPreguntas; i++) {
+                const namePregunta = 'q' + i;
+                // Buscamos cuál opción de radio seleccionó el usuario para esta pregunta
+                const seleccionada = document.querySelector(`input[name="${namePregunta}"]:checked`);
+
+                if (seleccionada) {
+                    if (seleccionada.value === respuestasCorrectas[namePregunta]) {
+                        correctas++;
+                    }
+                }
+            }
+
+            // 3. Capturamos el contenedor para inyectar el mensaje de resultado
+            const messageContainer = document.getElementById('quiz-result-message');
+            if (!messageContainer) {
+                console.error("Error: No se encontró el contenedor con id 'quiz-result-message' en el HTML.");
+                return;
+            }
+
+            let messageHtml = '';
+
+            // 4. Evaluamos si aprobó todas o si debe reintentar
+            if (correctas === totalPreguntas) {
+                // MENSAJE DE FELICITACIONES (Éxito completo)
+                messageHtml = `
+                    <div class="nu-card nu-card-special slide-up" style="border-color: #28a745; background-color: rgba(40, 167, 69, 0.1); text-align: center; padding: 20px; border-radius: var(--radius, 24px); width: 100%; box-sizing: border-box;">
+                        <h3 style="color: #28a745; margin-bottom: 10px;">¡Excelente Trabajo!</h3>
+                        <p style="color: #000; font-size: 1.1rem;">Has respondido correctamente todas las preguntas. ¡Estás listo para el lobby!</p>
+                    </div>
+                `;
+            } else {
+                // MENSAJE DE REINTENTAR (Estilizado para Luxury Tech: fondo oscuro, borde sutil y texto claro)
+                messageHtml = `
+                    <div class="nu-card nu-card-special slide-up" style="border-color: #dc3545; background-color: #1a1a1a; text-align: center; justify-content: center; align-items: center; display: flex; flex-direction: column; padding: 25px; border-radius: var(--radius, 24px); width: 100%; box-sizing: border-box; border: 1px solid rgba(220, 53, 69, 0.4);">
+                        <p style="color: #ffffff; font-size: 0.95rem; margin-bottom: 20px; max-width: 80%; line-height: 1.5;">
+                            Obtuviste <strong style="font-size: 1.2rem; color: #dc3545;">${correctas}/${totalPreguntas}</strong> respuestas correctas. Mantener la calma y priorizar es clave en el lobby. ¡Sigue practicando!
+                        </p>
+                        <a href="#" onclick="reiniciarQuiz(); return false;" class="nu-btn-retry">Reintentar</a>
+                    </div>
+                `;
+            }
+
+            // Pintamos el resultado en la pantalla
+            messageContainer.innerHTML = messageHtml;
+            
+            // Hace un auto-scroll suave hacia el mensaje para que el usuario lo note de inmediato
+            messageContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function reiniciarQuiz() {
+            // 1. Limpia todas las selecciones (desmarca los radio buttons)
+            const inputs = document.querySelectorAll('input[type="radio"]');
+            inputs.forEach(input => input.checked = false);
+            
+            // 2. Elimina por completo el cuadro de mensaje/reintentar de la pantalla
+            const messageContainer = document.getElementById('quiz-result-message');
+            if (messageContainer) {
+                messageContainer.innerHTML = '';
+            }
+
+        }
+
+        function abrirModal(src) {
+            var modal = document.getElementById("miModalImage");
+            var imgAmpliada = document.getElementById("imgAmpliada");
+            modal.style.display = "block";
+            imgAmpliada.src = src;
+        }
+
+        function cerrarModal() {
+            var modal = document.getElementById("miModalImage");
+            modal.style.display = "none";
+        }
+        </script>
+        
+</body>
+</html>

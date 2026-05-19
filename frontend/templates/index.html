@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula-T | Innovación Turística</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/logo.jpeg') }}" type="image/jpeg">
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><img src="{{ url_for('static', filename='img/logo.jpeg') }}" alt="Logo" style="width: 105px; height: 105px; border-radius: 0%;">Formula-T</span></div>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Proyecto</a></li>
+            <li><a href="#cursos">Cursos</a></li>
+        </ul>
+    </nav>
+
+    <header id="inicio" class="hero fade-in">
+        <div class="hero-content">
+            <h1>Impulsa tu carrera en el <br><span>Turismo Real</span></h1>
+            <p>Formación práctica basada en experiencias del sector.</p>
+        </div>
+    </header>
+
+    <section id="nosotros" class="nu-section-container slide-up">
+        <div class="nu-bento-grid">
+            
+            <div class="nu-box box-main">
+                <div class="nu-box-content">
+                    <span class="nu-label">La Idea</span>
+                    <h3>¿En qué consiste Formula-T?</h3>
+                    <p>Una aplicación móvil revolucionaria que ofrece cursos, asesorías y contenido práctico de alto impacto sobre turismo y atención al cliente en Cartagena.</p>
+                    <div class="nu-icon-circle">📱</div>
+                </div>
+            </div>
+
+            <div class="nu-box box-soft-purple">
+                <div class="nu-box-content">
+                    <span class="nu-label">El Reto</span>
+                    <h4>¿Qué problema resuelve?</h4>
+                    <p>La falta de formación accesible y especializada en el sector turístico local.</p>
+                </div>
+            </div>
+
+            <div class="nu-box box-gray">
+                <div class="nu-box-content">
+                    <span class="nu-label">Comunidad</span>
+                    <h4>¿A quién va dirigido?</h4>
+                    <p>Jóvenes, emprendedores y apasionados por el turismo.</p>
+                </div>
+            </div>
+
+            <div class="nu-box box-accent">
+                <div class="nu-box-content">
+                    <span class="nu-label">Diferenciador</span>
+                    <h3>Nuestro valor real</h3>
+                    <p>Contenido basado en <strong>experiencias reales</strong> del sector turístico, con un enfoque práctico y personalizado que no encontrarás en cursos teóricos.</p>
+                    <button class="nu-btn-secondary">Saber más</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+   <div class="bg-soft-gray">
+        <section id="cursos" class="nu-section-container slide-up">
+            <div class="section-header-modern">
+                <span class="nu-label">Formación de Alto Impacto</span>
+                <h2>Explora nuestros cursos</h2>
+                <p>Diseñamos herramientas prácticas para estudiantes, emprendedores y empresas que buscan dominar el sector hospitality.</p>
+            </div>
+
+            <div class="nu-grid">
+                <!-- CURSO 1 -->
+                <a href="{{ url_for('curso1') }}"  class="nu-card">
+                <div>
+                    <div>
+                        <span class="tag tag-blue">Nuevo</span>
+                        <h3>Formula FS - Front Office Survival</h3>
+                        <p>Maneja la presión real de una recepción y rompe el miedo al primer empleo simulando situaciones críticas de un turno real.</p>
+                    </div>
+                    <div class="nu-card-footer">Ver más →</div>
+                </div>
+                </a>
+
+                <!-- CURSO 2 -->
+                <a href="{{ url_for('curso2') }}"  class="nu-card">
+                <div>
+                    <div>
+                        <span class="tag tag-blue">Nuevo</span>
+                        <h3>Eco-Storytelling: Diseña experiencias</h3>
+                        <p>Diferencia tu producto de la competencia y justifica el aumento de tus precios mediante el diseño de experiencias únicas.</p>
+                    </div>
+                    <div class="nu-card-footer">Ver más →</div>
+                </div>
+                </a>
+
+                <!-- CURSO 3 -->
+                <a href="{{ url_for('curso3') }}"  class="nu-card">
+                <div>
+                    <div>
+                        <span class="tag tag-blue">Nuevo</span>
+                        <h3>Recuperación del servicio y lealtad</h3>
+                        <p>Entrena a tu capital humano para salvar situaciones críticas. Técnicas de comunicación asertiva para blindar la lealtad con la empresa.</p>
+                    </div>
+                    <div class="nu-card-footer">Ver más →</div>
+                </div>
+                </a>
+                
+            </div>
+        </section>
+    </div>
+    
+
+    <footer class="footer-institucional">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h2 class="footer-project-title">Formula-T</h2>
+                <p>Transformando el futuro del turismo en Cartagena.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Equipo</h4>
+                <ul>
+                    <li>Yuseth</li>
+                    <li>Mariana</li>
+                    <li>Juan</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contacto</h4>
+                <ul>
+                    <li>Email: contacto@formula-t.com</li>
+                    <li>Cartagena, Colombia</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Proyecto de Aula - Formula-T. Todos los derechos reservados.
+        </div>
+    </footer>
+</body>
+</html>

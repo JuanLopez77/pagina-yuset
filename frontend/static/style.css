@@ -1,0 +1,630 @@
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+section, .grid, .canvas-grid {
+    padding: 80px 5%;
+    scroll-margin-top: 20px;
+}
+
+/* =========================================
+   VARIABLES DE MARCA (NUEVO ESTILO AZUL)
+   ========================================= */
+:root {
+    --primary: #3ec0f1;       /* Azul Principal */
+    --primary-dark: #249ac7;  /* Azul Oscuro */
+    --primary-light: #e8f9ff; /* Azul Claro */
+    --accent: #3ec0f1;        
+    --dark: #000;          
+    --gray: #767676;          
+    --light-bg: #111111;      
+    --white: #ffffff;
+    --radius: 24px;           
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* =========================================
+   ESTILOS BASE Y TIPOGRAFÍA
+   ========================================= */
+body {
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    color: #000;
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+/* =========================================
+   NAVEGACIÓN MODERNA
+   ========================================= */
+nav {
+    padding: 0.5rem 5%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 8%;
+    background: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.logo img {
+    height: 35px;
+    width: auto;
+    border-radius: 50%;
+    display: block;
+}
+
+.logo span { 
+    color: #000; 
+}
+
+nav ul { display: flex; list-style: none; align-items: center; }
+nav ul li { margin-left: 30px; }
+
+nav ul li a { 
+    color: #000; 
+    text-decoration: none; 
+    font-weight: 600; 
+    transition: var(--transition);
+}
+
+nav ul li a:hover { color: #000; }
+
+.btn-nav {
+    background: var(--primary);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+/* =========================================
+   HERO SECTION (ANIMADA)
+   ========================================= */
+.hero {
+    height: 70vh;
+
+    /* DEGRADADO AZUL */
+    background: linear-gradient(
+        135deg,
+        #3ec0f1 0%,
+        #1d8fb8 50%,
+        #0b4f66 100%
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 0 5%;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+/* =========================================
+   BIBLIOTECA DE CURSOS (ESTILO NU)
+   ========================================= */
+.nu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 60px 8%;
+}
+
+.nu-card {
+    text-decoration: none; /* Quita el subrayado */
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 40px;
+    border: 1px solid #e5e5e5;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 320px;
+    
+}
+
+.nu-card:hover {
+    transform: translateY(-12px);
+
+    /* SOMBRA AZUL */
+    box-shadow: 0 30px 60px rgba(62, 192, 241, 0.18);
+
+    border-color: var(--primary);
+}
+
+.tag {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.tag-blue { 
+    background: #e7f8ff; 
+    color: #3ec0f1; 
+}
+
+
+.nu-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--dark);
+}
+
+.nu-card p {
+    color: var(--gray);
+    font-size: 1rem;
+}
+
+.nu-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* =========================================
+   ANIMACIONES DE SECCIÓN
+   ========================================= */
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.slide-up {
+    animation: slideUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.footer-institucional {
+    background-color: #000;
+    color: #fff;
+    padding: 80px 8% 40px;
+}
+
+.footer-project-title {
+    color: var(--primary); 
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.footer-column h4 {
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+/* =========================================
+   ELEMENTOS INTERACTIVOS
+   ========================================= */
+
+   
+.mentoria-flotante a {
+    background: var(--primary);
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+
+    /* SOMBRA AZUL */
+    box-shadow: 0 10px 25px rgba(62, 192, 241, 0.35);
+
+    transition: var(--transition);
+}
+
+.mentoria-flotante a:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* CONTENEDOR BENTO GRID */
+.nu-section-container {
+    padding: 80px 8%;
+    background-color: transparent;
+}
+
+.nu-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    gap: 20px;
+}
+
+.nu-box {
+    border-radius: 32px; 
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.nu-box:hover {
+    transform: translateY(-5px);
+}
+
+.box-main {
+    grid-column: span 2;
+    grid-row: span 1;
+    background-color: var(--primary-light); 
+}
+
+.box-soft-purple {
+    grid-column: span 1;
+
+    /* AZUL */
+    background: linear-gradient(
+        135deg,
+        #3ec0f1 0%,
+        #249ac7 100%
+    );
+
+    color: white;
+}
+
+.box-soft-purple h4, 
+.box-soft-purple p { 
+    color: white; 
+}
+
+.box-gray {
+    grid-column: span 1;
+    background-color: #f5f5f7;
+}
+
+.box-accent {
+    grid-column: span 4;
+
+    /* DEGRADADO AZUL OSCURO */
+    background: linear-gradient(
+        135deg,
+        #0f6f91 0%,
+        #3ec0f1 100%
+    );
+
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nu-label {
+    display: inline-block;
+    font-weight: 800;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+}
+
+.box-soft-purple .nu-label, 
+.box-accent .nu-label {
+    color: var(--white);
+}
+
+.nu-box h3 { font-size: 1.8rem; margin: 0 0 15px 0; }
+.nu-box h4 { font-size: 1.3rem; margin: 0 0 10px 0; }
+
+.nu-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+.nu-btn-secondary {
+    background: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    color: var(--primary);
+    font-weight: 700;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .nu-bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .box-main, 
+    .box-soft-purple, 
+    .box-gray, 
+    .box-accent {
+        grid-column: span 1;
+    }
+
+    .box-accent { 
+        flex-direction: column; 
+        text-align: center; 
+    }
+
+    .nu-btn-secondary { 
+        margin: 20px auto 0; 
+    }
+}
+
+
+/* ESTILO DE LOS CAMPOS FORM */
+.nu-form .form-group {
+    margin-bottom: 20px;
+}
+
+.nu-form label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #4a4a4a;
+}
+
+.nu-form input {
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    border: 2px solid #eee;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.nu-form input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: var(--primary-light);
+}
+
+/* BOTÓN PRINCIPAL */
+.nu-btn-primary {
+    width: 100%;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.nu-btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+}
+
+.forgot-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Contenedor de la cabecera */
+.section-header-modern {
+    margin-bottom: 50px;
+    text-align: left; /* Alineación a la izquierda estilo Nu, o 'center' si prefieres */
+    max-width: 800px;
+}
+
+/* El título principal */
+.section-header-modern h2 {
+    font-size: clamp(2rem, 4vw, 3rem); /* Tamaño dinámico */
+    font-weight: 800;
+    color: var(--dark);
+    margin: 0 0 15px 0;
+    line-height: 1.2;
+}
+
+/* El párrafo descriptivo */
+.section-header-modern p {
+    font-size: 1.1rem;
+    color: var(--gray);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.bg-soft-gray {
+    background-color: #f2f4f7; /* El gris que elegimos */
+    width: 100%;
+    margin: 0;
+    padding: 80px 0; /* Controla el espacio arriba y abajo de la sección */
+}
+
+/* Tarjeta de Reto con el azul que ya teníamos pero con estructura nu-card */
+.pulse-blue-card {
+    border: 2px solid var(--primary) !important; /* Puedes cambiar por #3ec0f1 si prefieres azul */
+    animation: nu-pulse 2s infinite;
+}
+
+@keyframes nu-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); } /* Usa color dorado */
+    70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+/* Estilos de las opciones para que se vean bien dentro de las cards */
+.quiz-option {
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    cursor: pointer;
+    transition: var(--transition);
+    display: block;
+    color: #ccc;
+}
+
+.quiz-option:hover {
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--primary);
+}
+
+.quiz-option input {
+    margin-right: 10px;
+}
+
+/* =========================================
+   ELEMENTOS INTERACTIVOS (NUEVO ESTILO BOTÓN REINTENTAR)
+   ========================================= */
+
+/* Estilo para el botón de reintentar (mismo diseño que "Volver al Inicio") [cite: 31, 32] */
+.nu-btn-retry {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* 1. TAMAÑO MÁS PEQUEÑO QUE LOS BOTONES PRINCIPALES */
+    padding: 8px 18px; /* Relleno ajustado */
+    font-size: 0.85rem;  /* Letra más pequeña */
+    
+    /* 2. ESTILO REDONDEADO Y AZUL (Mismo color que tus variables de marca) */
+    background-color: var(--primary); /* #3ec0f1 */
+    color: var(--white) !important; /* Texto blanco */
+    border-radius: 50px; /* Redondeado total */
+    border: none;
+    cursor: pointer;
+    text-decoration: none; /* Sin subrayado si es un enlace */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    
+    /* Efectos */
+    transition: var(--transition); /* Suavidad */
+    box-shadow: 0 5px 15px rgba(62, 192, 241, 0.2); /* Sombra azul suave [cite: 32] */
+}
+
+/* Efecto al pasar el mouse */
+.nu-btn-retry:hover {
+    background-color: var(--primary-dark); /* #249ac7 */
+    transform: translateY(-2px); /* Pequeña elevación [cite: 31] */
+    box-shadow: 0 8px 20px rgba(62, 192, 241, 0.3); /* Sombra más fuerte al hover [cite: 32] */
+}
+
+/* Efecto al hacer clic */
+.nu-btn-retry:active {
+    transform: translateY(1px) scale(0.98); /* Rebote hacia abajo [cite: 31] */
+    box-shadow: 0 3px 10px rgba(62, 192, 241, 0.1);
+}
+
+/* Contenedor del Modal de la Imagen */
+.modal-img-container {
+    display: none; 
+    position: fixed; 
+    z-index: 10000; /* Asegura que quede por encima de la barra de navegación */
+    padding-top: 50px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.9); /* Fondo negro con opacidad */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque premium */
+}
+
+/* Imagen dentro del modal */
+.modal-img-contenido {
+    margin: auto;
+    display: block;
+    max-width: 85%;
+    max-height: 85vh;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    animation: zoomModal 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Animación de apertura */
+@keyframes zoomModal {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Botón de cerrar (X) */
+.modal-img-cerrar {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-img-cerrar:hover {
+    color: var(--primary); /* Cambia al dorado o azul de tu marca al pasar el cursor */
+}
+
+/* Contenedor del audio para asegurar centrado absoluto */
+.audio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+/* Ajuste del reproductor nativo para que responda al tamaño de la nu-card */
+.audio-container audio {
+    width: 100%;       /* Forza al reproductor a estirarse sin salirse */
+    max-width: 100%;   /* Evita desbordamientos en cualquier nivel de zoom */
+    display: block;    /* Elimina espacios en blanco residuales debajo del elemento */
+}

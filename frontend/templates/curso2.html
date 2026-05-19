@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula ES – Eco-Storytelling</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="hero fade-in">
+        <div class="hero-content">
+            <h1>Formula ES <br><span>Eco-Storytelling</span></h1>
+            <p>Diseña experiencias que se venden solas.</p>
+        </div>
+    </header>
+
+    <section class="nu-section-container slide-up">
+        <div class="nu-box box-soft-purple">
+            <div class="nu-box-content">
+                <span class="nu-label">Reto Principal</span>
+                <h4>Tu propiedad es un escenario</h4>
+                <p>Tu propiedad no es solo una habitación... es el escenario de una historia que nadie más puede contar. ¿Cómo pasas de cobrar $100 a $120 sin comprar muebles nuevos?</p>
+                <p><strong>Tu reto:</strong> Justificar un aumento del 20% mediante una oferta narrativa que haga que el cliente pregunte: <em>¿Cuándo puedo ir?</em></p>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-soft-gray">
+        <section class="nu-section-container slide-up">
+            <div class="section-header-modern">
+                <span class="nu-label">Microlearning</span>
+                <h2>Píldoras de Eco-Storytelling</h2>
+            </div>
+            <div class="nu-grid">
+                <div class="nu-card">
+                    <div style="color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-microphone fa-2x"></i><span class="tag tag-blue">Audio</span></div>
+                    <h3>Pildora 1: Frases</h3>
+                    <p>Frases de poder y empowerment para calmar al huésped VIP.</p>
+                    <div class="audio-container">
+                        <audio controls>
+                            <source src="{{ url_for('static', filename='img/Yuset.mp3') }}" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+
+                <div class="nu-card">
+                    <div style="color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-file-alt fa-2x"></i><span class="tag tag-blue">Infografia</span></div>
+                    <h3>Pildora 2: Infografia</h3>
+                    <p>Datos críticos para un Check-in manual efectivo durante la caída del sistema.</p>
+                    <img src="{{ url_for('static', filename='img/info2.jpg') }}" 
+                        onclick="abrirModal(this.src)"
+                        style="max-height: 250px; width: 100%; border-radius: 12px; object-fit: cover; cursor: pointer; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.02)'"
+                        onmouseout="this.style.transform='scale(1)'">
+                </div>
+
+                <div id="miModalImage" class="modal-img-container" onclick="cerrarModal()">
+                    <span class="modal-img-cerrar">&times;</span>
+                    <img class="modal-img-contenido" id="imgAmpliada">
+                </div>
+
+                <div class="nu-card">
+                    <div style="color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-file-alt fa-2x"></i><span class="tag tag-blue">Infografia</span></div>
+                    <h3>Pildora 3: Guia rapida</h3>
+                    <p>Datos críticos para un Check-in manual efectivo durante la caída del sistema.</p>
+                    <img src="{{ url_for('static', filename='img/guia1.jpg') }}" 
+                        onclick="abrirModal(this.src)"
+                        style="max-height: 250px; width: 100%; border-radius: 12px; object-fit: cover; cursor: pointer; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.02)'"
+                        onmouseout="this.style.transform='scale(1)'">
+                </div>
+
+                <div id="miModalImage" class="modal-img-container" onclick="cerrarModal()">
+                    <span class="modal-img-cerrar">&times;</span>
+                    <img class="modal-img-contenido" id="imgAmpliada">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="nu-section-container slide-up">
+        <h2 class="nu-section-title" style="text-align: center; margin-top: 2rem; margin-bottom: 1.5rem;">
+            Check-list: Transformación "Eco-Autor" para Hoteles
+        </h2>
+
+        <div class="nu-checklist-container" style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 850px; margin: 0 auto;">
+
+            <div class="nu-card">
+                <h3 style="color: var(--primary); margin-top: 0;"><i class="fas fa-exchange-alt"></i> 1. Sustitución de Insumos (Adiós al Plástico)</h3>
+                <ul style="list-style: none; padding-left: 0; margin-bottom: 0;">
+                    <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 10px;">
+                        <input type="checkbox" id="insumo1" style="margin-top: 5px; cursor: pointer;">
+                        <label for="insumo1" style="cursor: pointer;"><strong>Estación de Hidratación:</strong> ¿Cambiaste las botellas de agua plásticas por jarras de vidrio o dispensadores de agua filtrada en zonas comunes?</label>
+                    </li>
+                    <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 10px;">
+                        <input type="checkbox" id="insumo2" style="margin-top: 5px; cursor: pointer;">
+                        <label for="insumo2" style="cursor: pointer;"><strong>Amenidades de Baño:</strong> ¿Sustituiste los envases miniatura (shampoo/jabón) por dispensadores recargables de cerámica o madera local?</label>
+                    </li>
+                    <li style="margin-bottom: 0; display: flex; align-items: flex-start; gap: 10px;">
+                        <input type="checkbox" id="insumo3" style="margin-top: 5px; cursor: pointer;">
+                        <label for="insumo3" style="cursor: pointer;"><strong>Bolsas de Cortesía:</strong> ¿Eliminaste las bolsas de plástico para lavandería y las cambiaste por bolsas de tela reutilizables hechas por artesanos locales?</label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nu-card">
+                <h3 style="color: var(--primary); margin-top: 0;"><i class="fas fa-recycle"></i> 2. Gestión de Residuos y Operación</h3>
+                <ul style="list-style: none; padding-left: 0; margin-bottom: 0;">
+                    <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 10px;">
+                        <input type="checkbox" id="residuo1" style="margin-top: 5px; cursor: pointer;">
+                        <label for="residuo1" style="cursor: pointer;"><strong>Separación Visible:</strong> ¿Tienes estaciones de reciclaje señalizadas de forma creativa que eduquen al turista sobre el manejo de residuos en Cartagena?</label>
+                    </li>
+                    <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 10px;">
+                        <input type="checkbox" id="residuo2" style="margin-top: 5px; cursor: pointer;">
+                        <label for="residuo2" style="cursor: pointer;"><strong>Compostaje de Experiencia:</strong> ¿Existe un plan para los residuos orgánicos del desayuno que pueda transformarse en abono para las plantas del hotel?</label>
+                    </li>
+                    <li style="margin-bottom: 0; display: flex; align-items: flex-start; gap: 10px;">
+                        <input type="checkbox" id="residuo3" style="margin-top: 5px; cursor: pointer;">
+                        <label for="residuo3" style="cursor: pointer;"><strong>Limpieza Verde:</strong> ¿Tus productos de limpieza son biodegradables para reducir el impacto químico en el ecosistema costero?</label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nu-card">
+                <h3 style="color: var(--primary); margin-top: 0;"><i class="fas fa-leaf"></i> 3. Estética y Conexión Local (Story-frame)</h3>
+                <ul style="list-style: none; padding-left: 0; margin-bottom: 0;">
+                    <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 10px;">
+                        <input type="checkbox" id="estetica1" style="margin-top: 5px; cursor: pointer;">
+                        <label for="estetica1" style="cursor: pointer;"><strong>Decoración con Propósito:</strong> ¿Utilizas fibras naturales (palma, mimbre) o materiales recuperados en lugar de mobiliario sintético o de plástico?</label>
+                    </li>
+                    <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 10px;">
+                        <input type="checkbox" id="estetica2" style="margin-top: 5px; cursor: pointer;">
+                        <label for="estetica2" style="cursor: pointer;"><strong>Iluminación Eficiente:</strong> ¿Aprovechas al máximo la luz natural del Caribe y usas bombillería LED de luz cálida para crear atmósfera sin gastar energía de más?</label>
+                    </li>
+                    <li style="margin-bottom: 0; display: flex; align-items: flex-start; gap: 10px;">
+                        <input type="checkbox" id="estetica3" style="margin-top: 5px; cursor: pointer;">
+                        <label for="estetica3" style="cursor: pointer;"><strong>Vegetación Nativa:</strong> ¿Las plantas de tu hotel son especies locales que requieren poca agua y ayudan a refrescar el ambiente naturalmente?</label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nu-card">
+                <h3 style="color: var(--primary); margin-top: 0;"><i class="fas fa-bullhorn"></i> 4. Comunicación del Valor Eco</h3>
+                <ul style="list-style: none; padding-left: 0; margin-bottom: 0;">
+                    <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 10px;">
+                        <input type="checkbox" id="comun1" style="margin-top: 5px; cursor: pointer;">
+                        <label for="comun1" style="cursor: pointer;"><strong>Narrativa Sostenible:</strong> ¿Tu descripción en la app o redes explica cuánto plástico ahorra el huésped al quedarse contigo?</label>
+                    </li>
+                    <li style="margin-bottom: 0; display: flex; align-items: flex-start; gap: 10px;">
+                        <input type="checkbox" id="comun2" style="margin-top: 5px; cursor: pointer;">
+                        <label for="comun2" style="cursor: pointer;"><strong>El "Compromiso Verde":</strong> ¿Tienes un pequeño letrero de madera explicando que el cambio de toallas no es diario para ahorrar agua, conectando emocionalmente con el cliente?</label>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="nu-section-container slide-up">
+        <div class="nu-card">
+            <h2>Pasaporte de Autor</h2>
+            <form id="pasaporteForm" style="display: flex; flex-direction: column; gap: 15px;">
+                <textarea placeholder="Redacta tu párrafo de venta usando Storytelling..." required style="padding: 10px; border-radius: var(--radius);"></textarea>
+                <input type="file" accept="image/*" required>
+                <select required style="padding: 10px; border-radius: var(--radius);">
+                    <option value="">Selecciona tu acción sostenible</option>
+                    <option>Eliminación de plásticos</option>
+                    <option>Iluminación eficiente</option>
+                    <option>Vegetación nativa</option>
+                </select>
+                <input type="number" id="precioBase" placeholder="Precio Base Actual ($)" required style="padding: 10px; border-radius: var(--radius);">
+                <button type="button" class="nu-btn nu-btn-primary" onclick="calcularPrecio()">Generar Propuesta y Calcular (+20%)</button>
+            </form>
+            <div id="resultadoCalculo" style="margin-top: 20px; font-weight: bold; color: var(--primary);"></div>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+                        <a href="{{ url_for('index') }}" class="nu-btn-secondary" style="text-decoration: none;">Volver al Inicio</a>
+    </section>
+
+    <script>
+        function calcularPrecio() {
+            const precioBase = parseFloat(document.getElementById('precioBase').value);
+            if (!isNaN(precioBase)) {
+                const nuevoPrecio = precioBase * 1.20;
+                document.getElementById('resultadoCalculo').innerText = `Tu nuevo valor de experiencia es: $${nuevoPrecio.toFixed(2)}`;
+            }
+        }
+
+        function abrirModal(src) {
+            var modal = document.getElementById("miModalImage");
+            var imgAmpliada = document.getElementById("imgAmpliada");
+            modal.style.display = "block";
+            imgAmpliada.src = src;
+        }
+
+        function cerrarModal() {
+            var modal = document.getElementById("miModalImage");
+            modal.style.display = "none";
+        }
+    </script>
+
+    <footer class="footer-institucional">
+        <div class="footer-bottom">&copy; 2026 Formula-T | Eco-Storytelling Module</div>
+    </footer>
+</body>
+</html>
