@@ -34,12 +34,14 @@
                 <span class="nu-label">Microlearning</span>
                 <h2>Píldoras de Aprendizaje</h2>
             </div>
-            
-            <div class="nu-card">
+            <div class="nu-grid">
+                <div class="nu-card">
                     <div style="color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-file-alt fa-2x"></i><span class="tag tag-blue">Infografia</span></div>
-                    <h3>Pildora 2: Infografia</h3>
-                    <p>Datos críticos para un Check-in manual efectivo durante la caída del sistema.</p>
-                    <img src="{{ url_for('static', filename='img/info2.jpg') }}" 
+                    <h3>Pildora 1: Infografia</h3>
+                    <p>Infografía para aprender a identificar lo que el cliente no dice, 
+                        lo que realmente siente y lo que espera recibir, en este módulo brindaremos técnicas de escucha activa, lenguaje empático, 
+                        como evitar respuestas defensivas y validación emocional.</p>
+                    <img src="{{ url_for('static', filename='img/info3.jpg') }}" 
                         onclick="abrirModal(this.src)"
                         style="max-height: 250px; width: 100%; border-radius: 12px; object-fit: cover; cursor: pointer; transition: transform 0.3s;"
                         onmouseover="this.style.transform='scale(1.02)'"
@@ -51,10 +53,9 @@
                     <img class="modal-img-contenido" id="imgAmpliada">
                 </div>
 
-            <div class="nu-grid">
                 <div class="nu-card">
                     <div style="color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-video fa-2x"></i><span class="tag tag-blue">Videos</span></div>
-                        <h3>Pildora 1: Límites de Compensación</h3>
+                        <h3>Pildora 2: Límites de Compensación</h3>
                             <video src="{{ url_for('static', filename='img/curso3.mp4') }}" 
                             controls 
                             style="max-height: 250px; width: 100%; border-radius: 12px; object-fit: cover;">
@@ -62,7 +63,7 @@
                         </div>
                         <div class="nu-card">
                             <div style="color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-microphone fa-2x"></i><span class="tag tag-blue">Audio</span></div>
-                                <h3>Pildora 2: Seguimiento Post-Crisis</h3>
+                                <h3>Pildora 3: Seguimiento Post-Crisis</h3>
                                 <p>Qué ofrecer sin afectar el margen de utilidad.</p>
                                 <div class="audio-container">
                                     <audio controls>
@@ -70,10 +71,49 @@
                                     </audio>
                                 </div>
                             </div>
-                        </div>
+            </div>
         </section>
     </div>
     
+    <section class="nu-section-container slide-up">
+        <div class="section-header-modern">
+            <span class="nu-label">Simulación</span>
+            <h2>Decisiones en Cascada</h2>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
+            <div class="nu-card">
+                <p><strong>1. Situación: El cliente corporativo escribe el siguiente mensaje:
+                    "La experiencia de nuestro evento fue muy desorganizada y sinceramente esperábamos mucho mas profesionalismo."</strong></p>
+                <div style="margin-top: 15px; display: grid; gap: 10px;">
+                    <label class="quiz-option"><input type="radio" name="q1" value="A"> A) El problema fue causado por proveedores externos.</label>
+                    <label class="quiz-option"><input type="radio" name="q1" value="B"> B) Entendemos completamente su molestia y lamentamos la experiencia vivida. Queremos revisar lo ocurrido y darle una solución lo antes posible.</label>
+                    <label class="quiz-option"><input type="radio" name="q1" value="C"> C) No todos los invitados se quejaron del evento.</label>
+                    <label class="quiz-option"><input type="radio" name="q1" value="D"> D) La próxima vez intentaremos hacerlo mejor.</label>
+                </div>
+            </div>
+
+            <div class="nu-card">
+                <p><strong>2. Situación: Después de escuchar al cliente, debes decidir 
+                    cómo compensar el error sin afectar demasiado la
+                    rentabilidad de la empresa. ¿Qué opción elegirías?</strong></p>
+                <div style="margin-top: 15px; display: grid; gap: 10px;">
+                    <label class="quiz-option"><input type="radio" name="q2" value="A"> A) Devolver el 100% del dinero inmediatamente.</label>
+                    <label class="quiz-option"><input type="radio" name="q2" value="B"> B) No ofrecer ninguna compensación porque "el evento sí
+                        se realizo".</label>
+                    <label class="quiz-option"><input type="radio" name="q2" value="C"> C) Ofrecer un descuento parcial para el próximo evento junto con atención VIP personalizada.</label>
+                    <label class="quiz-option"><input type="radio" name="q2" value="D"> D) Regalar servicios adicionales sin autorización ni control de costos.</label>
+                </div>
+            </div>
+
+            <div class="quiz-actions" style="text-align: center; margin-top: 30px;">
+                <button type="button" class="nu-btn nu-btn-primary" onclick="verificarRespuestas()">Enviar respuestas</button>
+            </div>
+        </div>
+            <div id="quiz-result-message" style="margin-top: 30px; width: 100%;"></div>
+        </div>
+    </section>
+
     <div class="bg-soft-gray">
     <section class="nu-section-container slide-up">
         <div class="nu-box box-soft-purple">
@@ -86,6 +126,89 @@
             <a href="{{ url_for('index') }}" class="nu-btn-secondary" style="text-decoration: none;">Volver al Inicio</a>
         </div>
     </section>
+    <script>
+                function abrirModal(src) {
+                    var modal = document.getElementById("miModalImage");
+                    var imgAmpliada = document.getElementById("imgAmpliada");
+                    modal.style.display = "block";
+                    imgAmpliada.src = src;
+                }
+
+                function cerrarModal() {
+                    var modal = document.getElementById("miModalImage");
+                    modal.style.display = "none";
+                }
+
+                function verificarRespuestas(event) {
+            // Evita que la página se recargue
+            if (event) event.preventDefault();
+
+            // Respuestas correctas para el Curso 3
+            const respuestasCorrectas = {
+                q1: 'B', // "Entendemos completamente..."
+                q2: 'C'  // "Ofrecer un descuento parcial..."
+            };
+
+            let correctas = 0;
+            const totalPreguntas = 2; // Ahora son 2 preguntas
+
+            // 2. Recorremos las 2 preguntas
+            for (let i = 1; i <= totalPreguntas; i++) {
+                const namePregunta = 'q' + i;
+                const seleccionada = document.querySelector(`input[name="${namePregunta}"]:checked`);
+
+                if (seleccionada) {
+                    if (seleccionada.value === respuestasCorrectas[namePregunta]) {
+                        correctas++;
+                    }
+                }
+            }
+
+            // 3. Capturamos el contenedor
+            const messageContainer = document.getElementById('quiz-result-message');
+            if (!messageContainer) return;
+
+            let messageHtml = '';
+
+            // 4. Evaluamos resultado
+            if (correctas === totalPreguntas) {
+                // MENSAJE DE ÉXITO
+                messageHtml = `
+                    <div class="nu-card nu-card-special slide-up" style="border-color: #28a745; background-color: rgba(40, 167, 69, 0.1); text-align: center; padding: 20px; border-radius: var(--radius, 24px); width: 100%; box-sizing: border-box;">
+                        <h3 style="color: #28a745; margin-bottom: 10px;">¡Maestro en Recuperación!</h3>
+                        <p style="color: #000; font-size: 1.1rem;">Has resuelto el conflicto corporativo con éxito. Tu capacidad de fidelización es nivel experto.</p>
+                    </div>
+                `;
+            } else {
+                // MENSAJE DE REINTENTAR
+                messageHtml = `
+                    <div class="nu-card nu-card-special slide-up" style="border-color: #dc3545; background-color: #1a1a1a; text-align: center; justify-content: center; align-items: center; display: flex; flex-direction: column; padding: 25px; border-radius: var(--radius, 24px); width: 100%; box-sizing: border-box; border: 1px solid rgba(220, 53, 69, 0.4);">
+                        <p style="color: #ffffff; font-size: 0.95rem; margin-bottom: 20px; max-width: 80%; line-height: 1.5;">
+                            Obtuviste <strong style="font-size: 1.2rem; color: #dc3545;">${correctas}/${totalPreguntas}</strong> respuestas correctas. Recuerda: la empatía y la rentabilidad van de la mano. ¡Inténtalo de nuevo!
+                        </p>
+                        <a href="#" onclick="reiniciarQuiz(); return false;" class="nu-btn-retry">Reintentar</a>
+                    </div>
+                `;
+            }
+
+            messageContainer.innerHTML = messageHtml;
+            messageContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+
+         function reiniciarQuiz() {
+            // 1. Limpia todas las selecciones (desmarca los radio buttons)
+            const inputs = document.querySelectorAll('input[type="radio"]');
+            inputs.forEach(input => input.checked = false);
+            
+            // 2. Elimina por completo el cuadro de mensaje/reintentar de la pantalla
+            const messageContainer = document.getElementById('quiz-result-message');
+            if (messageContainer) {
+                messageContainer.innerHTML = '';
+            }
+
+        }
+
+    </script>
     <footer class="footer-institucional">
         <div class="footer-container">
             <div class="footer-column">
